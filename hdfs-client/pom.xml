@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>elephant</artifactId>
+        <groupId>com.cjcoder.elephant</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>hdfs-client</artifactId>
+
+    <properties>
+        <hadoop.version>3.3.0</hadoop.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cjcoder.elephant</groupId>
+            <artifactId>service</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cjcoder.elephant</groupId>
+            <artifactId>common</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cjcoder.elephant</groupId>
+            <artifactId>hdfs-spring-boot-starter</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+</project>

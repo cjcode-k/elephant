@@ -1,0 +1,38 @@
+{
+  "groups": [
+    {
+      "name": "hdfs-spring-boot-starter",
+      "type": "com.cjcoder.elephant.autoconfig.HdfsProperties",
+      "sourceType": "com.cjcoder.elephant.autoconfig.HdfsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cjcoder.hdfs.dfsUri",
+      "type": "String",
+      "sourceType": "com.cjcoder.elephant.autoconfig.HdfsProperties"
+    },
+    {
+      "name": "cjcoder.hdfs.dfsUser",
+      "type": "String",
+      "sourceType": "com.cjcoder.elephant.autoconfig.HdfsProperties",
+      "defaultValue": "hadoop"
+    },
+    {
+      "name": "cjcoder.hdfs.replication",
+      "type": "int",
+      "sourceType": "com.cjcoder.elephant.autoconfig.HdfsProperties",
+      "defaultValue": 3
+    },
+    {
+      "name": "cjcoder.hdfs.domainContext",
+      "type": "String",
+      "sourceType": "com.cjcoder.elephant.autoconfig.HdfsProperties"
+    },
+    {
+      "name": "cjcoder.hdfs.expires",
+      "type": "Long",
+      "sourceType": "com.cjcoder.elephant.autoconfig.HdfsProperties"
+    }
+  ]
+}

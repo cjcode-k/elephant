@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.3</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.cjcoder.elephant</groupId>
+    <artifactId>elephant</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>common</module>
+        <module>service</module>
+        <module>test</module>
+        <module>hdfs-spring-boot-starter</module>
+        <module>hdfs-client</module>
+    </modules>
+
+    <properties>
+        <java.build.version>1.8</java.build.version>
+        <java.build.encoding>UTF-8</java.build.encoding>
+
+        <!-- dependency versions -->
+        <spring.boot.version>2.4.3</spring.boot.version>
+        <commons.collections4>4.4</commons.collections4>
+        <mybatis.version>3.5.3</mybatis.version>
+        <mybatis.spring.version>2.0.3</mybatis.spring.version>
+        <mysql.java.version>5.1.45</mysql.java.version>
+        <jwt.version>0.11.0</jwt.version>
+        <bouncycastle.version>1.59</bouncycastle.version>
+        <jayway.jsonpath.version>2.4.0</jayway.jsonpath.version>
+        <poi.version>4.1.2</poi.version>
+        <commons.text.version>1.9</commons.text.version>
+        <joda.money.version>1.0.1</joda.money.version>
+        <guava.version>27.0-jre</guava.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <!-- maven compile plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.build.version}</source>
+                    <target>${java.build.version}</target>
+                    <encoding>${java.build.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                    <configuration>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                        </compilerArgs>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <compilerVersion>${java.version}</compilerVersion>
+                        <encoding>${java.build.encoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                    <configuration>
+                        <skip>false</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <arguments>-DskipTests -Dmaven.source.skip=true -Dmaven.javadoc.skip=true</arguments>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
